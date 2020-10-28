@@ -6,7 +6,8 @@ import ReactDom from 'react-dom';
   var div = React.createElement('div',{name:'name'},'这是div22');
   ReactDom.render(div, document.getElementById('app'))
 */
-/* var lis = [];
+/* 
+var lis = [];
 for(var i=0;i<10;i++){
   var li = <li key={i}>item-{i}</li>
   lis.push(li)
@@ -19,25 +20,36 @@ var div = <div name="name">
 </div>
 ReactDom.render(div, document.getElementById('app')) */
 
-function Hello(){
+/* 函数组件 */
+/* function Hello(props){
   return (
     <div>
-      <h2>Hello World</h2>
+      <h2>Hello World {props.name}-{props.age}</h2>
     </div>
   )
+} */
+import Hello from './components/funComponent.jsx';
+var person = {
+  name:'zs',
+  age:18
 }
-ReactDom.render(<Hello></Hello>, document.getElementById('app')) */
 
-
-/* class DivCompoent extends React.Component{
+/* 类组件 */
+class DivCompoent extends React.Component{
+  
   render(){
     return (
-      <>
-        <div>
-          这是div333
-        </div>
-      </>
+      <div>
+        <h2>这是classComponent </h2>
+        <p></p>
+      </div>
     );
   }
 }
-ReactDom.render(<DivCompoent />, document.getElementById('app')) */
+// import DivCompoent from './components/classComponent.jsx';
+
+ReactDom.render(
+  <div>
+    <Hello {...person} />
+    <DivCompoent {...person} />
+  </div>, document.getElementById('app'))
