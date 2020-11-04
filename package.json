@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 3000 --hot"
+    "dev": "webpack-dev-server --port 3000 --hot"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +31,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.1.0",
     "react-dom": "^16.1.0"
   }

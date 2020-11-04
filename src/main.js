@@ -35,21 +35,26 @@ var person = {
 }
 
 /* 类组件 */
-class DivCompoent extends React.Component{
-  
+/* class DivCompoent extends React.Component{
   render(){
     return (
       <div>
         <h2>这是classComponent </h2>
-        <p></p>
+        <p>{this.props.name}- {this.props.age}</p>
       </div>
     );
   }
-}
-// import DivCompoent from './components/classComponent.jsx';
+} */
+import DivCompoent from './components/classComponent.jsx';
+import Comment from './components/comment/comment.jsx';
+import Counter from './components/counter/index.jsx';
 
 ReactDom.render(
   <div>
     <Hello {...person} />
     <DivCompoent {...person} />
+    {/* 评论 */}
+    <Comment />
+    <Counter initCount={2} />
+    <Counter />
   </div>, document.getElementById('app'))
