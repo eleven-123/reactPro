@@ -16,7 +16,8 @@ export default class Counter extends React.Component{
     super(props)
 
     this.state = {
-      count: props.initCount
+      count: props.initCount,
+      step: 1
     }
   }
   componentWillMount(){
@@ -26,7 +27,7 @@ export default class Counter extends React.Component{
     return <div>
       <h6>Counter-计数器</h6>
       <div id="mybox" className="box">
-        <input type="text" name="count" />
+        <input type="text" name="count" value={this.state.step} onChange={this.chageStep} ref="step"/>
         <button onClick={this.onChange}>Add</button>
         <p>当前的数量是：{this.state.count}</p>
       </div>
@@ -48,9 +49,20 @@ export default class Counter extends React.Component{
   }
 
   onChange = () =>{
-    let num = this.state.count + 1;
+    let num = Number(this.state.count) + Number(this.state.step);
     this.setState({
       count: num
+    })
+  }
+  chageStep = (e) => {
+    /* 方式1 ref */
+    // let val = this.refs.step.value;
+
+    /* 方式2 */
+    let val = e.target.value;
+
+    this.setState({
+      step: val
     })
   }
 }
