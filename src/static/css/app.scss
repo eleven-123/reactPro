@@ -1,0 +1,24 @@
+
+.layout{
+  height: 100%
+}
+
+.logo{
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3) url('../images/logo.png') no-repeat;
+  background-size: 24px;
+  background-position: 6px center;
+  padding: 0 6px;
+  h3{
+    line-height: 30px;
+    color: #fff;
+    margin: 0 0 0 30px;
+  }
+}
+
+.content{
+  background: #fff;
+}
